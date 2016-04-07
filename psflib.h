@@ -39,7 +39,7 @@ typedef struct psf_file_callbacks
     const char * path_separators;
 
     /* accepts UTF-8 encoding, returns file handle */
-    void * (* fopen )(const char *);
+    void * (* fopen )(const char *, const char * mode);
 
     /* reads to specified buffer, returns count of size bytes read */
     size_t (* fread )(void *, size_t size, size_t count, void * handle);

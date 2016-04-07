@@ -419,7 +419,7 @@ static int psf_load_internal( psf_load_state * state, const char * file_name )
     strcat( full_path, file_name );
 #endif
 
-    file = state->file_callbacks->fopen( full_path );
+    file = state->file_callbacks->fopen( full_path, "rb" );
 
     free( full_path );
 
