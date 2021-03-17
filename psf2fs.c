@@ -414,7 +414,7 @@ static int virtual_read(struct PSF2FS *fs, struct DIR_ENTRY *entry, int offset, 
       destlen = block_usize;
       // attempt decompress
       r = uncompress((unsigned char *) fs->cacheblock.uncompressed_data, &destlen, (const unsigned char *) entry->source->reserved_data + block_zofs, block_zsize);
-      if(r != Z_OK || destlen != block_usize) {
+      if(r != Z_OK || destlen != (unsigned long)block_usize) {
 //        char s[999];
 //        sprintf(s,"zdata=%02X %02X %02X blockz=%d blocku=%d destlenout=%d", zdata[0], zdata[1], zdata[2], block_zsize, block_usize, destlen);
 //        errormessageadd(fs, s);

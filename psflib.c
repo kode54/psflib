@@ -484,7 +484,6 @@ static int psf_load_internal(psf_load_state * state, const char * file_name)
 	{
 		if (psf_want_status(state))
 		{
-			char *end;
 			char temp[8];
 			psf_status(state, "Expected PSF version ", 1);
 			snprintf(temp, 7, "%d", (int)state->allowed_version);
